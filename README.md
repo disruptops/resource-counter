@@ -41,17 +41,17 @@ The current list incluides:
 
 ## Usage:
 
-To iunstall just copy it where you want it and instally the requirements:
+To install just copy it where you want it and instally the requirements:
 
 	pip install -r ./requirements.txt
 
-This was written in Python 3.6
+This was written in Python 3.6.
 
 To run:
 
 	python count_resources.py 
 
-By default, it will use whatever AWS credentials are alerady configued on the system. You can also specify an access key/secret at runtime and this is not stored:
+By default, it will use whatever AWS credentials are alerady configued on the system. You can also specify an access key/secret at runtime and this is not stored. It only neeeds read permissions for the listed services- I use the ReadOnlyAccess managed policy, but you should also be able to use the SecurityAudit policy.
 
 	Usage: count_resources.py [OPTIONS]
 
