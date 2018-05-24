@@ -37,9 +37,10 @@ def controller(access, secret, profile):
             sys.exit()
 
     # pull the account ID for use when needed for filtering
-    iam = session.resource('iam')
+    iam = session.client('sts')
 
-    account_id = iam.CurrentUser().arn.split(':')[4]
+    # account_id = iam.CurrentUser().arn.split(':')[4]
+    account_id = iam.get_caller_identity()["Account"]
     click.echo('Current account ID: ' + account_id)
 
     # Initialize dictionary to hold the counts. Pull the regions using EC2, since that is in every region.
